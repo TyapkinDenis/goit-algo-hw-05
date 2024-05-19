@@ -1,3 +1,5 @@
+# поправив рядок 39
+
 def input_error(func):
     def inner(*args, **kwargs):
         try:
@@ -34,7 +36,7 @@ def change_contact(args, contacts):
 
 @input_error
 def show_phone(args, contacts):  
-    name = args
+    name, = args # додав "," тепер працює
     if name in contacts:
         return contacts[name]
     else:
